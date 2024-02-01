@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 form</title>
+    <script type="text/javascript">
+        function validar(){ 
+        var todo_correcto = true;
+        var numeroVerificado = /^[0-9]{5}$/i;
+        var numero = document.form1.cargaEntero.value;
+        if(!numeroVerificado.test(numero)){
+            todo_correcto = false;
+        } 
+        if(!todo_correcto){
+           alert('Algunos campos no están correctos, vuelva a revisarlos');
+        }
+
+        }
+    </script>
+</head>
+<body style="background-color: rgb(27, 235, 239);">
+    <h1>Numero entero de cinco digitos</h1>
+    <form name="form1" onsubmit="return validar()">
+    <label for="cargaEntero">Digite un numero decimal que contenga 5 digitos</label>
+    <input name="cargaEntero" id="CargaEntero" ><br><br>
+    <input type="submit" value="aceptar">
+    </form>
+</body>
+</html>

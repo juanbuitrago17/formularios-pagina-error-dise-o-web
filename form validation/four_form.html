@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificador de Contraseña</title>
+  <style>
+    .strength-meter {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verificador de Contraseña</h1>
+  <div>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" onkeyup="verificarSeguridad()">
+  </div>
+  
+  <div class="strength-meter">
+    Fortaleza de la contraseña:
+    <span id="strengthText">-</span>
+  </div>
+
+  <script>
+    function verificarSeguridad() {
+      const password = document.getElementById("password").value;
+      const strengthText = document.getElementById("strengthText");
+
+      // Puedes personalizar las reglas de seguridad según tus necesidades.
+      const seguridad = calcularSeguridad(password);
+
+      if (seguridad < 50) {
+        strengthText.textContent = "Débil";
+        strengthText.style.color = "red";
+      } else if (seguridad < 80) {
+        strengthText.textContent = "Moderada";
+        strengthText.style.color = "orange";
+      } else {
+        strengthText.textContent = "Fuerte";
+        strengthText.style.color = "green";
+      }
+    }
+
+    // Esta función calcula la seguridad de la contraseña.
+    function calcularSeguridad(password) {
+      // Aquí puedes implementar tus propias reglas de seguridad.
+      // Por ejemplo, contar la longitud de la contraseña, incluir números, caracteres especiales, etc.
+      const longitud = password.length;
+      let seguridad = 0;
+
+      if (longitud >= 8) {
+        seguridad += 30;
+      }
+
+      if (/[0-9]/.test(password)) {
+        seguridad += 20;}
+        if (/[a-zA-Z]/.test(password)) {
+        seguridad += 20;
+      }
+
+      if (/[^a-zA-Z0-9]/.test(password)) {
+        seguridad += 30;
+      }
+
+      return seguridad;
+    }
+  </script>
+</body>
+</html>

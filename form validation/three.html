@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 form</title>
+    <script type="text/javascript">
+        function validar(){ 
+        var todo_correcto = true;
+        var placaVerificado = /^[a-zA-Z]{3}[0-9]{3}$/i;
+        var placa = document.form1.Placa.value;
+        if(!placaVerificado.test(placa)){
+            todo_correcto = false;
+        } 
+        
+        var cedulaValidar = /^[0-9]{8,10}$/i;
+        var cedula = document.form1.cedula.value;
+        if(!cedulaValidar.test(cedula)){
+            todo_correcto = false;
+        } 
+        if(!todo_correcto){
+           alert('Algunos campos no están correctos, vuelva a revisarlos');
+        }
+        }
+    </script>
+</head>
+<body style="background-color: rgb(193, 239, 27);">
+    <h1>Formulario para guardar el carro</h1>
+    <form name="form1" onsubmit='return validar();'>
+    <label for="Nombre">Digite su nombre</label>
+    <input name="Nombre" id="Nombre" type="text"><br/><br/>
+    <label for="Nombre">Digite su apellido</label>
+    <input name="Nombre" id="Nombre" type="text"><br/><br/>
+    <label for="cedula">Digite el numero de cedula</label>
+    <input name="cedula" id="Cedula"/><br/><br/>
+    <label for="Placa">Digite la placa de el auto sabiendo que los primeros 3 datos son letras y los otros 3 son numeros</label>
+   <input name="Placa" id="Placa" pattern="[A-Za-z]{3}[0-9]{3}"/><br/> <br/>
+    <input type="submit" value="aceptar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 form</title>
+    <script type="text/javascript">
+        function validar(){ 
+        var todo_correcto = true;
+        var placaVerificado = /^[a-zA-Z]{3}[0-9]{3}$/i;
+        var placa = document.form1.Placa.value;
+        if(!placaVerificado.test(placa)){
+            todo_correcto = false;
+        } 
+        if(!todo_correcto){
+           alert('Algunos campos no están correctos, vuelva a revisarlos');
+        }
+
+        }
+    </script>
+</head>
+<body style="background-color: rgb(239, 27, 218);">
+    <h1>Placa de un auto</h1>
+    <form name="form1" onsubmit="return validar()">
+    <label for="Placa">Digite la placa de el auto sabiendo que los primeros 3 datos son letras y los otros 3 son numeros</label>
+    <input name="Placa" id="Placa" /><br/> <br/>
+    <input type="submit" value="aceptar">
+    </form>
+</body>
+</html>

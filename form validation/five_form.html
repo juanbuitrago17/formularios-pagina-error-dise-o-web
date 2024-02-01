@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comparador de Fechas</title>
+</head>
+<body>
+  <h1>Comparador de Fechas</h1>
+  <div>
+    <label for="fecha1">Fecha 1:</label>
+    <input type="date" id="fecha1">
+    <br>
+    <label for="fecha2">Fecha 2:</label>
+    <input type="date" id="fecha2">
+    <br>
+    <button onclick="compararFechas()">Comparar Fechas</button>
+  </div>
+  
+  <h2>Resultado:</h2>
+  <p id="resultado"></p>
+
+  <script>
+    function compararFechas() {
+      const fecha1 = new Date(document.getElementById("fecha1").value);
+      const fecha2 = new Date(document.getElementById("fecha2").value);
+
+      if (isNaN(fecha1) || isNaN(fecha2)) {
+        document.getElementById("resultado").textContent = "Por favor, ingresa fechas válidas en ambos campos.";
+      } else if (fecha1.getTime() === fecha2.getTime()) {
+        document.getElementById("resultado").textContent = "Las fechas son iguales.";
+      } else if (fecha1.getTime() > fecha2.getTime()) {
+        document.getElementById("resultado").textContent = "Fecha 1 es mayor que Fecha 2.";
+      } else {
+        document.getElementById("resultado").textContent = "Fecha 2 es mayor que Fecha 1.";
+      }
+    }
+  </script>
+</body>
+</html>
