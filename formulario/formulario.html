@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Formulario
+        </title>
+    </head>
+    <body style="background-color:rgb(139, 231, 250) ;">
+        <form name="Form1" target="" action="#" method="get">
+            <h1>Formulario de registro</h1>
+            <label for="Nombre">Nombre: </label>
+            <input type="text" name="nombre" id="Nombre" placeholder="Escribe tu nombre">
+            <br><br>
+            <label for="Apellidos">Apellidos: </label>
+            <input type="text" name="Apellido" id="Apellidos" placeholder="Escribe tu apellido">
+            <br><br>
+            <label>Sexo:</label>
+            <label for="sexoH">Hombre</label>
+            <input id="sexoH" type="radio" name="sexo-hombre" />
+            <label for="sexoM">Mujer</label>
+            <input id="sexoM" type="radio" name="sexo-Mujer" />
+            <br><br>
+            <label for="correo">Correo: </label>
+            <input type="text" name="Correo" id="correo" placeholder="Escribe tu correo"/>
+            <br><br>
+            <label>Poblacion: </label>
+            <select name="poblacion">
+                <option >Alicante</option>
+                <option>Cartagena</option>
+                <option>Bogota</option>
+                <option>Bucaramanga</option>
+                <option>Tunja</option>
+            </select>
+            <br><br>
+            <label>Descripcion: </label>
+            <textarea>Escribe la descripcion</textarea>
+            <br><br>
+            <input name="Recibir-informacion" type="checkbox"/>Deseo recibir informacion sobre novedades y ofertas.
+            <br><br>
+            <input name="Aceptar-condiciones"  type="checkbox"/>Declaro haber leido y acepto las condiciones generales del programa  y la normativa sobre proteccion.
+            <br><br>
+            <input type="submit" name="enviar" value="Enviar"/>
+        </form>
